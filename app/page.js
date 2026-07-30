@@ -49,10 +49,11 @@ export default function HomePage() {
       {/* HERO */}
       <section className="hero">
         <div className="hero-photo">
-          {/* Spokane River / People's Park Bridge — photo by Clay Elliot (Unsplash, free license) */}
+          {/* Aerial of downtown Spokane (Tyler-provided). NOTE: confirm licensing
+              before launch — likely stock/third-party. Bridge fallback: /spokane-hero.jpg */}
           <Image
-            src="/spokane-hero.jpg"
-            alt="The Spokane River and People's Park Bridge in autumn"
+            src="/spokane-aerial.webp"
+            alt="Aerial view of downtown Spokane, Washington"
             fill
             priority
             sizes="100vw"
