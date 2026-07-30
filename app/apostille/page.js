@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { SITE, telHref } from '@/lib/site';
 import Check from '@/components/Check';
 import CtaBand from '@/components/CtaBand';
+import Faq from '@/components/Faq';
 
 export const metadata = {
   title: `Apostille Services in ${SITE.city}, ${SITE.state}`,
@@ -16,6 +17,21 @@ const DOCS = [
   'Business & corporate documents',
   'Single-status / no-record affidavits',
   'Adoption paperwork',
+];
+
+const FAQ = [
+  {
+    q: 'How long does an apostille take?',
+    a: "Turnaround depends on the Washington Secretary of State's current processing times and how the documents are submitted. We'll give you an estimate up front.",
+  },
+  {
+    q: 'Do you issue the apostille?',
+    a: 'No. The Washington Secretary of State issues apostilles. We prepare and facilitate — including any required notarization — to make it straightforward for you.',
+  },
+  {
+    q: 'Which countries accept an apostille?',
+    a: "Countries that are members of the Hague Apostille Convention. For non-member countries a different authentication/legalization process applies; tell us the destination and we'll point you the right way.",
+  },
 ];
 
 export default function ApostillePage() {
@@ -82,20 +98,7 @@ export default function ApostillePage() {
         <div className="frame">
           <div className="content" style={{ maxWidth: 760, margin: '0 auto' }}>
             <h2>Apostille FAQ</h2>
-            <div className="faq">
-              <div className="faq-item">
-                <h3>How long does an apostille take?</h3>
-                <p>Turnaround depends on the Washington Secretary of State&rsquo;s current processing times and how the documents are submitted. We&rsquo;ll give you an estimate up front.</p>
-              </div>
-              <div className="faq-item">
-                <h3>Do you issue the apostille?</h3>
-                <p>No. The Washington Secretary of State issues apostilles. We prepare and facilitate — including any required notarization — to make it straightforward for you.</p>
-              </div>
-              <div className="faq-item">
-                <h3>Which countries accept an apostille?</h3>
-                <p>Countries that are members of the Hague Apostille Convention. For non-member countries a different authentication/legalization process applies; tell us the destination and we&rsquo;ll point you the right way.</p>
-              </div>
-            </div>
+            <Faq items={FAQ} />
           </div>
         </div>
       </section>

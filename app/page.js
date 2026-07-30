@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { SITE } from '@/lib/site';
 import CallButton from '@/components/CallButton';
+import JsonLd from '@/components/JsonLd';
+import { localBusinessSchema } from '@/lib/seo';
 
 // Homepage service rows (reference-format list). Edit freely.
 const SERVICES = [
@@ -46,6 +48,8 @@ const CHECK = (
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={localBusinessSchema()} />
+
       {/* HERO */}
       <section className="hero">
         <div className="hero-photo">

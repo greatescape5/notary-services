@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { SITE, telHref } from '@/lib/site';
 import Check from '@/components/Check';
 import CtaBand from '@/components/CtaBand';
+import Faq from '@/components/Faq';
 
 export const metadata = {
   title: `Mobile Notary in ${SITE.city} — We Come to You`,
@@ -25,6 +26,25 @@ const WHERE = [
   'Hospitals & care facilities',
   'Offices & job sites',
   'Coffee shops & public meeting spots',
+];
+
+const FAQ = [
+  {
+    q: 'How fast can you get to me?',
+    a: "It depends on the day and your location, but same-day and after-hours appointments are often available. Call and we'll give you a realistic time.",
+  },
+  {
+    q: 'What does a mobile notary cost?',
+    a: 'The per-signature notarial fee is set by Washington State; a separate travel fee is agreed up front based on your location. No surprises — we confirm pricing before we head out.',
+  },
+  {
+    q: 'What do I need to have ready?',
+    a: 'The unsigned document(s), a valid government-issued photo ID for every signer, and any witnesses if your document requires them.',
+  },
+  {
+    q: 'Can you give me legal advice about my document?',
+    a: "No — a notary public is not an attorney and can't give legal advice or help you choose or complete a document. We verify identity and witness signatures.",
+  },
 ];
 
 export default function MobileNotaryPage() {
@@ -105,24 +125,7 @@ export default function MobileNotaryPage() {
             </p>
 
             <h2 style={{ marginTop: 30 }}>Frequently asked questions</h2>
-            <div className="faq">
-              <div className="faq-item">
-                <h3>How fast can you get to me?</h3>
-                <p>It depends on the day and your location, but same-day and after-hours appointments are often available. Call and we&rsquo;ll give you a realistic time.</p>
-              </div>
-              <div className="faq-item">
-                <h3>What does a mobile notary cost?</h3>
-                <p>The per-signature notarial fee is set by Washington State; a separate travel fee is agreed up front based on your location. No surprises — we confirm pricing before we head out.</p>
-              </div>
-              <div className="faq-item">
-                <h3>What do I need to have ready?</h3>
-                <p>The unsigned document(s), a valid government-issued photo ID for every signer, and any witnesses if your document requires them.</p>
-              </div>
-              <div className="faq-item">
-                <h3>Can you give me legal advice about my document?</h3>
-                <p>No — a notary public is not an attorney and can&rsquo;t give legal advice or help you choose or complete a document. We verify identity and witness signatures.</p>
-              </div>
-            </div>
+            <Faq items={FAQ} />
           </div>
         </div>
       </section>
