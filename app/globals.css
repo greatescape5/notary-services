@@ -277,3 +277,69 @@ img { max-width: 100%; display: block; }
 
 /* Small helper to visibly mark unfilled placeholders in dev */
 .ph { color: #e6c98d; background: rgba(192, 137, 75, 0.22); padding: 1px 7px; border-radius: 4px; font-size: 0.94em; font-weight: 600; }
+
+/* ===========================================================================
+   PAGE HEADER (interior pages) + BOOK page
+   =========================================================================== */
+.page-head { background: var(--greige); border-bottom: 1px solid var(--line); padding: 46px 0 40px; }
+.page-head h1 { font-size: 38px; font-weight: 800; }
+.inline-call { color: var(--gold-dk); font-weight: 700; text-decoration: none; }
+.inline-call:hover { text-decoration: underline; }
+
+.book-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 44px; align-items: start; }
+@media (max-width: 880px) { .book-grid { grid-template-columns: 1fr; gap: 34px; } }
+.colh { font-size: 22px; font-weight: 800; margin-bottom: 4px; }
+.colp { font-size: 14.5px; margin-bottom: 20px; }
+
+/* Form */
+.leadform {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 8px; padding: 24px;
+}
+.field { margin-bottom: 16px; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 520px) { .field-row { grid-template-columns: 1fr; gap: 0; } }
+.leadform label {
+  display: block; font-size: 13px; font-weight: 600;
+  color: var(--ink); margin-bottom: 5px;
+}
+.leadform input,
+.leadform select,
+.leadform textarea {
+  width: 100%; font-family: var(--font-sans), sans-serif; font-size: 15px;
+  color: var(--ink); background: #fff;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 11px 12px; transition: border-color 0.12s ease, box-shadow 0.12s ease;
+}
+.leadform input:focus,
+.leadform select:focus,
+.leadform textarea:focus {
+  outline: none; border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(192, 137, 75, 0.18);
+}
+.leadform textarea { resize: vertical; }
+.leadform .btn { width: 100%; margin-top: 4px; }
+.leadform .btn:disabled { opacity: 0.7; cursor: default; }
+.form-fine { font-size: 12px; color: #8a8073; margin-top: 12px; }
+.form-note { border-radius: var(--radius); padding: 16px 18px; font-size: 14.5px; }
+.form-note.form-ok { background: rgba(46, 139, 111, 0.1); border: 1px solid rgba(46, 139, 111, 0.4); color: #1f5c48; }
+.form-note.form-ok strong { color: #14352a; }
+.form-note.form-error { background: rgba(176, 60, 43, 0.08); border: 1px solid rgba(176, 60, 43, 0.35); color: #8a2f22; margin-top: 12px; }
+
+/* Scheduler + call card */
+.sched-placeholder {
+  background: var(--card); border: 1px dashed var(--dot);
+  border-radius: 8px; padding: 26px; text-align: center;
+}
+.sched-placeholder h3 { font-size: 18px; margin-bottom: 8px; }
+.sched-placeholder p { font-size: 14px; max-width: 40ch; margin: 0 auto; }
+.book-callcard {
+  margin-top: 22px; background: var(--white); border: 1px solid var(--line);
+  border-left: 4px solid var(--gold); border-radius: 8px; padding: 22px;
+}
+.book-callcard h3 { font-size: 17px; margin-bottom: 4px; }
+.book-callcard p { font-size: 14px; margin-bottom: 14px; }
+.book-callcard .btn { margin-bottom: 14px; }
+.book-callcard .areas { font-size: 13px; color: var(--slate); margin-bottom: 6px; }
+.book-callcard .areas a { color: var(--gold-dk); font-weight: 600; text-decoration: none; }
+.book-callcard .areas a:hover { text-decoration: underline; }
