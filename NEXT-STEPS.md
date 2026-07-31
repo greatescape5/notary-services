@@ -17,6 +17,35 @@ pages for at least **5 towns per county**. Counties (corrected spelling):
 > appointment; travel fee agreed up front") rather than implying we're around
 > the corner. This keeps the pages truthful and still captures the search traffic.
 
+## Design reference — `web screen shot.jpg`
+
+Tyler added `web screen shot.jpg` (repo root) as a layout to **model** — adapt it
+to our warm brand (espresso + honey gold, Hanken/Inter, gold check icons — NOT the
+gray/green from the screenshot). Three sections to emulate:
+
+1. **Value band — "Punctual · Precise · Pristine":** a band with three columns,
+   each an icon + heading + short paragraph. The three P's are strong copy; keep or
+   lightly adapt. Good fit on the homepage and/or `/mobile-notary`.
+
+2. **"Services Offered" checklist:** a two-column checkmark list grouped into
+   **General Notary** and **Loan Signings**. Example items from the reference:
+   - _General Notary:_ car title transfers, birth/death certificates, estate
+     planning documents, copy certifications, jurats, adoptions, living wills,
+     I-9 completion, oaths/affirmations, acknowledgements.
+   - _Loan Signings:_ cash closings, refinance, reverse mortgage, conventional
+     purchase, seller packages, HELOC/second mortgage, FHA/VA purchase.
+   - ⚠️ **Confirm with Tyler before publishing the Loan Signings column** — the
+     original handoff listed loan signing as a *future/optional* service. Only show
+     it if he actually offers it now.
+
+3. **"We Service" map + county list:** a map of our region with the four target
+   counties highlighted, next to a checkmark list of counties/towns. This is the
+   visual home for the Service Areas work below — put it on the `/service-area`
+   index (and optionally the homepage). Build a lightweight **SVG map of eastern
+   Washington** highlighting **Spokane, Whitman, Stevens, and Pend Oreille** counties
+   in gold. Under it: "If you don't see your area, please call [PHONE]" + the
+   existing travel-fee disclaimer.
+
 ## Nav change
 
 Add a **Service Areas** link in `components/Nav.js` pointing to `/service-area`
@@ -104,6 +133,9 @@ the pages to the async data functions. Until then, import the local array direct
 - [ ] ≥5 town pages per county, each 300+ unique words + a local FAQ.
 - [ ] Each town page has LocalBusiness + BreadcrumbList JSON-LD.
 - [ ] All town URLs are in `sitemap.xml` and linked from the footer.
+- [ ] From `web screen shot.jpg`: "Punctual · Precise · Pristine" value band added (on-brand).
+- [ ] From `web screen shot.jpg`: "Services Offered" checklist (General Notary + Loan Signings — Loan Signings only if Tyler confirms he offers it).
+- [ ] From `web screen shot.jpg`: "We Service" SVG county map highlighting Spokane, Whitman, Stevens, Pend Oreille on the service-area index.
 - [ ] `npx next build` passes (use the dummy-Supabase env vars as before).
 
 ---

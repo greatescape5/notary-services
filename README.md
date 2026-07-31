@@ -4,7 +4,9 @@ Lead-generation website for a mobile notary + apostille business in Spokane, WA.
 Built with Next.js 14 (App Router), Supabase, Resend, and an embedded Calendly scheduler.
 
 > **Next up:** see [NEXT-STEPS.md](NEXT-STEPS.md) — a "Service Areas" nav tab with
-> SEO town pages grouped by county (Spokane, Whitman, Stevens, Pend Oreille).
+> SEO town pages grouped by county (Spokane, Whitman, Stevens, Pend Oreille), plus
+> layout ideas to model from the reference `web screen shot.jpg` (value band,
+> services checklist, and a "We Service" county map).
 
 ## Run locally
 
