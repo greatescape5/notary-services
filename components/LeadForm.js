@@ -10,9 +10,31 @@ const SERVICES = [
   'Other',
 ];
 
+// Autocomplete suggestions for the location field — the Spokane-area towns &
+// ZIPs we serve. Customers can still type a full street address; these just
+// help them fill in a nearby area quickly.
+const LOCATIONS = [
+  'Spokane, WA 99201',
+  'Spokane, WA 99205',
+  'Spokane, WA 99207',
+  'Spokane, WA 99208',
+  'South Hill (Spokane), WA 99203',
+  'South Hill (Spokane), WA 99223',
+  'Spokane Valley, WA 99206',
+  'Spokane Valley, WA 99212',
+  'Spokane Valley, WA 99216',
+  'Liberty Lake, WA 99019',
+  'Airway Heights, WA 99001',
+  'Cheney, WA 99004',
+  'Deer Park, WA 99006',
+];
+
 export default function LeadForm() {
   const [status, setStatus] = useState('idle'); // idle | sending | ok | error
   const [message, setMessage] = useState('');
+
+  // Earliest selectable date = today (no past dates).
+  const today = new Date().toISOString().slice(0, 10);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -84,13 +106,25 @@ export default function LeadForm() {
         </div>
         <div className="field">
           <label htmlFor="location">Location / ZIP</label>
-          <input id="location" name="location" type="text" placeholder="Where should we meet you?" />
+          <input
+            id="location"
+            name="location"
+            type="text"
+            list="location-options"
+            placeholder="Start typing your city or ZIP"
+            autoComplete="off"
+          />
+          <datalist id="location-options">
+            {LOCATIONS.map((loc) => (
+              <option key={loc} value={loc} />
+            ))}
+          </datalist>
         </div>
       </div>
 
       <div className="field">
-        <label htmlFor="preferred_time">Preferred date &amp; time</label>
-        <input id="preferred_time" name="preferred_time" type="text" placeholder="e.g. Thursday afternoon, or ASAP" />
+        <label htmlFor="preferred_time">Preferred date</label>
+        <input id="preferred_time" name="preferred_time" type="date" min={today} />
       </div>
 
       <div className="field">
