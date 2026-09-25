@@ -1,14 +1,14 @@
 import { SITE } from '@/lib/site';
+import { SERVICE_AREAS } from '@/lib/serviceAreas';
 
-// Static routes for now. When /service-area/[slug] town pages are added,
-// map over getServiceAreas() here and append each town URL.
 export default function sitemap() {
-  const routes = ['', '/mobile-notary', '/apostille', '/about', '/book'];
+  const routes = ['', '/mobile-notary', '/apostille', '/service-area', '/about', '/book'];
+  const townRoutes = SERVICE_AREAS.map((a) => `/service-area/${a.slug}`);
   const now = new Date();
-  return routes.map((path) => ({
+  return [...routes, ...townRoutes].map((path) => ({
     url: `${SITE.baseUrl}${path}`,
     lastModified: now,
     changeFrequency: 'monthly',
-    priority: path === '' ? 1 : 0.8,
+    priority: path === '' ? 1 : 0.7,
   }));
 }

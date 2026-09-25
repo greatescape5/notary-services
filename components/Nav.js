@@ -17,6 +17,7 @@ export default function Nav() {
         <nav className="navlinks">
           <Link href="/mobile-notary">Mobile Notary</Link>
           <Link href="/apostille">Apostille</Link>
+          <Link href="/service-area">Service Areas</Link>
           <Link href="/about">About</Link>
           <Link href="/book">Book</Link>
           <CallButton />

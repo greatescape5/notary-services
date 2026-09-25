@@ -408,3 +408,24 @@ img { max-width: 100%; display: block; }
   border-radius: 8px; padding: 18px 20px; font-size: 14px; color: var(--slate);
 }
 .disclaimer-note strong { color: var(--ink); }
+.disclaimer-note a { color: var(--gold-dk); font-weight: 700; text-decoration: none; }
+
+/* Service-area index cards */
+.crumb-link { color: inherit; text-decoration: none; }
+.crumb-link:hover { color: var(--gold-dk); }
+.area-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 820px) { .area-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .area-grid { grid-template-columns: 1fr; } }
+.area-card {
+  display: block; background: var(--card); border: 1px solid var(--line);
+  border-radius: 8px; padding: 22px; text-decoration: none;
+  box-shadow: 0 6px 18px rgba(14, 42, 71, 0.04);
+  transition: transform 0.08s ease, border-color 0.12s ease, box-shadow 0.12s ease;
+}
+.area-card:hover {
+  border-color: var(--gold); transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(46, 32, 16, 0.1);
+}
+.area-card h3 { font-size: 19px; margin-bottom: 6px; color: var(--ink); }
+.area-card p { font-size: 14px; color: var(--slate); margin-bottom: 12px; }
+.area-more { color: var(--gold-dk); font-weight: 700; font-size: 13.5px; }

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { SITE, telHref } from '@/lib/site';
+import { SERVICE_AREAS } from '@/lib/serviceAreas';
 
 export default function Footer() {
   return (
@@ -25,16 +26,19 @@ export default function Footer() {
             <ul>
               <li><Link href="/mobile-notary">Mobile Notary</Link></li>
               <li><Link href="/apostille">Apostille</Link></li>
+              <li><Link href="/service-area">Service Areas</Link></li>
               <li><Link href="/book">Book a Notary</Link></li>
               <li><Link href="/about">About</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4>Service area</h4>
+            <h4>Service areas</h4>
             <ul>
-              {SITE.areas.slice(0, 6).map((a) => (
-                <li key={a}>{a}</li>
+              {SERVICE_AREAS.map((a) => (
+                <li key={a.slug}>
+                  <Link href={`/service-area/${a.slug}`}>{a.name}</Link>
+                </li>
               ))}
             </ul>
           </div>
