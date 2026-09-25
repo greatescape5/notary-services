@@ -32,9 +32,13 @@ export default function BookPage() {
           </div>
 
           <div className="book-side-col">
-            <h2 className="colh">Pick a time</h2>
-            <p className="colp">Schedule instantly with our online calendar.</p>
-            <Scheduler />
+            {SITE.calendlyUrl && (
+              <>
+                <h2 className="colh">Pick a time</h2>
+                <p className="colp">Schedule instantly with our online calendar.</p>
+                <Scheduler />
+              </>
+            )}
 
             <div className="book-callcard">
               <h3>Prefer to call?</h3>

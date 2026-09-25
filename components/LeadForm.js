@@ -13,6 +13,8 @@ const SERVICES = [
 // Autocomplete suggestions for the location field — the Spokane-area towns &
 // ZIPs we serve. Customers can still type a full street address; these just
 // help them fill in a nearby area quickly.
+const TIME_WINDOWS = ['Morning', 'Midday', 'Evening'];
+
 const LOCATIONS = [
   'Spokane, WA 99201',
   'Spokane, WA 99205',
@@ -43,6 +45,12 @@ export default function LeadForm() {
 
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
+
+    // Combine the date + time-of-day into a single preferred_time value,
+    // e.g. "2026-10-02 · Morning".
+    data.preferred_time = [data.preferred_date, data.preferred_window]
+      .filter(Boolean)
+      .join(' · ');
 
     try {
       const res = await fetch('/api/lead', {
@@ -122,9 +130,20 @@ export default function LeadForm() {
         </div>
       </div>
 
-      <div className="field">
-        <label htmlFor="preferred_time">Preferred date</label>
-        <input id="preferred_time" name="preferred_time" type="date" min={today} />
+      <div className="field-row">
+        <div className="field">
+          <label htmlFor="preferred_date">Preferred date</label>
+          <input id="preferred_date" name="preferred_date" type="date" min={today} />
+        </div>
+        <div className="field">
+          <label htmlFor="preferred_window">Preferred time</label>
+          <select id="preferred_window" name="preferred_window" defaultValue="">
+            <option value="">No preference</option>
+            {TIME_WINDOWS.map((t) => (
+              <option key={t} value={t}>{t}</option>
+            ))}
+          </select>
+        </div>
       </div>
 
       <div className="field">
